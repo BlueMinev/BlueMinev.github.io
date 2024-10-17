@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 
-app.get('/ewyArchive', async (req, res) => {
+app.get('/ewyArchiveAPI', async (req, res) => {
     const {status, data} = await getEvents(req);
     res.status(status);
     if(data) res.json(data);
