@@ -15,8 +15,8 @@ window.addEventListener("load", function () {
     }
     if (fields_ok) {
       // prepare data for transport to server
-      let url = "https://api.vam.ac.uk/v2/objects/search?q=";
-      url = url + search;
+      let url = "http://localhost:3000/express_api?oid=12345678X";
+      //url = url + search;
       // create variables for data on html page that will be changed
       let result = document.querySelector("#result");
       document.querySelector("#loading").style.display = "block";
@@ -29,70 +29,12 @@ window.addEventListener("load", function () {
           return response.json();
         })
         .then(function (value) {
-          let pageSize = Number(value["info"]["page_size"]);
-          for (let i = 0; i < pageSize; i++) {
-            // sets base values
-            let title = "Unknown";
-            let date = "Unknown";
-            let desc = "There is no information available on this piece.";
-            let imageValue = "VnAAPI/resources/placeholder.png";
-
-            if (value["records"][i]["_primaryTitle"] === "") {
-            } else {
-              title = value["records"][i]["_primaryTitle"];
-            }
-            date = value["records"][i]["_primaryDate"];
-
-            if (
-              value["records"][i]["_images"]["_iiif_image_base_url"] ===
-              undefined
-            ) {
-            } else {
-              imageValue =
-                value["records"][i]["_images"]["_iiif_image_base_url"] +
-                "/full/full/0/default.jpg";
-            }
-
-            if (value["records"][i]["_currentLocation"]["type"] === "storage") {
-              whereToFind = "This item is currently not being displayed";
-            } else {
-              whereToFind =
-                "You can find this object : " +
-                value["records"][i]["_currentLocation"]["displayName"];
-            }
-
-            let madeBy = value["records"][i]["_primaryMaker"]["name"];
-            let type = value["records"][i]["objectType"];
-            let imgdesc = "A photo of a " + type + " made by " + madeBy + ".";
-            desc = "A " + type + " made by " + madeBy + "." + whereToFind + ".";
-
-            var cardDiv = document.createElement("div");
-            cardDiv.className = "card";
-            var titleH2 = document.createElement("h2");
-            titleH2.className = "title";
-            titleH2.textContent = title;
-            var dateH3 = document.createElement("h3");
-            dateH3.className = "date";
-            dateH3.textContent = date;
-            var imgElm = document.createElement("img");
-            imgElm.onerror = function () {
-              this.src = "VnAAPI/resources/placeholder.png";
-            };
-            imgElm.classList.add("image");
-
-            imgElm.setAttribute("src", imageValue);
-            imgElm.setAttribute("alt", imgdesc);
-
-            var para = document.createElement("p");
-            para.className = "desc";
-            para.textContent = desc;
-
-            cardDiv.appendChild(titleH2);
-            cardDiv.appendChild(dateH3);
-            cardDiv.appendChild(imgElm);
-            cardDiv.appendChild(para);
-            result.appendChild(cardDiv);
-          }
+          var cardDiv = document.createElement("div");
+          cardDiv.className = "card";
+          var content = document.createElement("p");
+            content.className = "returned";
+            content.textContent = value;
+            result.appendChild(content);
         })
         .catch(function (error) {
           console.log(error);
