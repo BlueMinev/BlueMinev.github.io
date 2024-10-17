@@ -1,0 +1,60 @@
+<!doctype html><!--HTML5 doctype declaration -->
+<html lang="en"><!--default language of the document content -->
+	
+    <head>
+		<meta charset="utf-8"><!--character encoding for the document (Unicode) -->
+		<title>Contact me </title><!--web page title -->
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="css/stylesheet.css" rel="stylesheet /">
+	</head>
+
+<body>
+<!--Markup all web page content inside the 'body' tags -->
+	<div id="wrapper">
+	<!--The 'wrapper' contains all the page content-->
+	
+    <header class="banner"><!--The main heading for the page -->
+		<h1>Contact Me</h1>
+
+	</header>
+	
+    <nav><!--The primary navigation for the page -->
+	<ul class="menu">
+		<li><a href="index.html">Learning Journal</a></li>
+		<li><a href="tutorial.html">Tutorial</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+	</ul>
+	</nav>
+    
+    <main><!--The main page content -->
+        
+	<form id ="form1">
+		<fieldset>
+		<legend>Contact Me!</legend>
+			<label for="name">Name <em>(required)</em></label>
+			<input type="text" id="name" required placeholder="Forename Surname">
+			<label for="email">Email address <em>(required)</em></label>
+			<input type="email"  id="email" required>
+			<label for="url">Website address</label>
+			<input type="url" id="url" placeholder="http://" >
+			<label for="message">Your Comments: </label>
+			<textarea id="message" required></textarea>
+			<p>Would you like me to contact you? 	</p>
+				<label for="information-yes">
+					<input type="radio" id="information-yes" 
+					name="information" value="yes" class="radiobutton"><span>Yes</span> </label>
+				  <label for="information-no">
+					<input type="radio" id="information-no" 
+					name="information" value="no" class="radiobutton" checked ><span>No</span></label>
+		
+			<input type="submit" value="Click to send" >
+		</fieldset>
+	</form>
+
+	<footer><!--Footer content -->
+		<small>Contact form is not functional as of yet.</small>
+	</footer>
+</main>
+	</div><!--Close 'wrapper' div -->
+</body><!--Close 'body' -->
+</html><!--Close 'html' -->

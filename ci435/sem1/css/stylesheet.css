@@ -1,0 +1,305 @@
+/*sections------------------------------------------------------------------- */
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgb(195, 195, 200);
+}
+#wrapper {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(255, 255, 255);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+main  {
+}
+article	{
+}
+aside	{
+}
+footer {
+}
+header {
+}
+.post	{
+    margin-top: 5px;
+	margin-bottom: 5px;
+}
+nav	{
+}
+/*headings------------------------------------------------------------------- */
+h1	{
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 40px;
+    line-height: 20px;
+}
+h2	{
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 30px;
+    line-height: 20px;
+}
+h3 	{
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 25px;
+    line-height: 20px;
+}
+/*grouping------------------------------------------------------------------- */
+p	{
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px 0 10px 0;
+}
+blockquote	{
+}
+table   {
+    border: 1px solid black;
+}
+/*lists---------------------------------------------------------------------- */
+ul	{
+    
+}
+.menu {
+    border-left: 5px solid blue;
+    padding: 6px;
+}
+.menu li
+{
+  display: block; /*display in a vertical column*/
+  margin: 2px;
+}
+.menu a
+{
+  display: block;
+  background-color: rgb(210, 210, 216);
+  border: 2px solid rgb(168, 168, 172);
+  border-radius: 3px;
+  text-align: center;
+  padding: 6px;
+  margin: auto;
+
+}
+img { max-width: 100%; }
+li	{
+
+}
+ol	{
+}
+dl	{
+}
+dt	{
+}
+dd	{
+}
+/*text------------------------------------------------------------------------ */
+em	{
+}
+strong	{
+}
+small	{
+}
+cite	{
+}
+time	{
+}
+/*image----------------------------------------------------------------------- */
+figure	{
+}
+figcaption	{
+}
+img	{
+}
+/*anchors--------------------------------------------------------------------- */
+a{
+    padding-right: 30px;
+}
+a:link	{
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(13, 4, 153);
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+.fltrt {
+    float: right;
+    margin-left: 8px;
+   }
+.clear {
+    clear: both;
+   }
+
+   .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    display: flex; 
+  }
+  .card-content {
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #0b31b8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 1.25em 1.25em 0.3em 0;
+    padding: 1em;
+  }
+
+
+.banner {
+	text-align: center;
+    background-image: linear-gradient(90deg,#ffffff,#5375f1,#ffffff);
+	background-size: 100% 130px;
+    background-position-y: bottom;
+    margin: 0%;
+    border-bottom: 1px solid #0b31b8;
+}
+.radiobutton{
+  width:13px;
+  height:12px;
+}
+span{
+  vertical-align: middle;
+}
+/*--------------------------------------*/ 
+input {
+  width: 100%;
+  padding: 3px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+input:focus {
+  border: 2px solid #0b31b8;
+  background-color: #f8f8f8;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+textarea:focus{
+  background-color: #f8f8f8;
+}
+input[type=radio]{
+  display: inline;
+  margin: 10px;
+}
+/*--------------------------------------*/ 
+.banner {grid-area: banner;}
+.menu {grid-area: menu;}
+nav {grid-area: nav;}
+table {grid-area: table;}
+main {grid-area: main;}
+aside {grid-area: aside;}
+footer {grid-area: footer;}
+.other {grid-area: other;}
+.timetable {grid-area: timetable}
+.video {grid-area: video}
+
+
+#wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+     "banner"
+     "menu"
+     "nav"
+     "main"
+     "aside"
+     "other"
+     "timetable"
+     "footer";
+  }
+
+  @media (min-width: 50em) {
+    #wrapper {
+      grid-template-columns: 3fr 6fr;
+      grid-template-areas: 
+        "banner  banner"
+        "menu  menu"
+        "nav  nav"
+        "main  main"
+        "other other"
+        "timetable timetable"
+        "footer  footer";
+    }
+    .banner { padding: 0 0 0 3em; }
+    /* Menu navigation - inline layout for wider screens */	
+     .menu { padding: 1em 0 1em 3em; }
+     .menu li
+     {
+      display: inline;
+      margin: 0 1em 0 0;
+     }
+     .menu a
+     {
+      display: inline;
+      padding: 0;
+      border-bottom: 0;
+      background-color: transparent;
+      border: 2px solid rgb(210, 210, 216);
+      border-radius: 3px;
+      text-align: center;
+      padding: 15px;
+      padding-left: 30px;
+      padding-right: 30px;
+     }
+  }
+
+  @media (min-width: 60em) {
+    #wrapper {
+      grid-template-columns: 3fr 5fr 3fr;
+      grid-template-areas: 
+        "banner  banner  banner"
+        "menu  menu  menu"
+        "nav nav nav"
+        "main  main  other"
+        "timetable timetable timetable"
+        "footer  footer  footer";
+     }
+  }
+  @media (max-width: 35em) {
+    table {
+     display:none;
+    }
+    video{
+      display:none;
+    }
+    p#hide{
+      display:none;
+    }
+    h2#hidetable{
+      display:none;
+    }
+    iframe#hideiframe {
+      display:none;
+    }
+   }
+/*640 px - tablet portrait orientation - 2 columns*/
+@media screen and (min-width: 40em){
+    .card { width: 50%; }
+  }
+  /*960 px* - tablet landscape orientation and above - 3 columns*/
+  @media screen and (min-width: 60em) {
+    .card { width: 33.33%; }
+  }
