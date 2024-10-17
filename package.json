@@ -1,0 +1,23 @@
+{
+  "name": "blueminev.github.io",
+  "version": "1.0.0",
+  "description": "Blue Minev's portfolio site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueMinev/BlueMinev.github.io.git"
+  },
+  "author": "Blue Minev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlueMinev/BlueMinev.github.io/issues"
+  },
+  "homepage": "https://github.com/BlueMinev/BlueMinev.github.io#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "react": "^18.3.1"
+  }
+}
