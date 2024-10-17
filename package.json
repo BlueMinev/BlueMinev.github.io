@@ -18,6 +18,7 @@
   "homepage": "https://github.com/BlueMinev/BlueMinev.github.io#readme",
   "dependencies": {
     "express": "^4.21.1",
+    "mysql2": "^3.11.3",
     "react": "^18.3.1"
   }
 }
